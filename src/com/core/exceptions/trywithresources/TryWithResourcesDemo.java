@@ -12,26 +12,33 @@ public class TryWithResourcesDemo {
     public static void main(String[] args) throws IOException {
 
 
-        //Try Can be defined with out catch but with finally;
-        /* So before java 7 evey try block should be either followd by catch or finally */
+        /**
+         * If you are defining a try block without catch (or finally) the method you define that
+         * method has to throw exceptions which might occur in the try block.
+         */
+
+
+        /**
+         * Try Can be defined with out catch but with finally;
+         * So before java 7 evey try block should be either followd by catch or finally
+         *
+         */
         try {
+            //code with checked exceptions
 
         } finally {
 
         }
 
 
-        //Try with resources goes like this
-        tryWithResource();
-
-
-    }
-
-    private static void tryWithResource() throws IOException {
-
-        try (BufferedReader br =
-                     new BufferedReader(new FileReader(""))) {
+        /**
+         * Now Try can be defined without catch or finally.
+         */
+        try (BufferedReader br = new BufferedReader(new FileReader(""))) {
             //Do Somtehing Here
         }
+
+
     }
+
 }
